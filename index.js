@@ -52,6 +52,8 @@ async function main(){
 	})
 
 	console.log("Starting server...")
+	console.log(`Storage path: ${process.env.STORAGE_PATH}`)
+	console.log(`Current cwd: ${process.cwd()}`)
 	fastify.listen({ port: process.env.PORT || 3000, host: "0.0.0.0" }, (err) => {
 		if(err) console.error(err) && process.exit(1)
 
@@ -71,12 +73,12 @@ fastify.get("/", async (req, res) => {
 	res.status(200).send({ statusCode: 200, message: "Obsidian Inbox API is running", version: require("./package.json").version })
 })
 
-// Get the new files to store
+// Get the list of files stored
 fastify.get("/files", async (req, res) => {
-	if(!fs.existsSync(path.join(process.env.STORAGE_PATH))) return res.status(404).send({ statusCode: 404, error: "Not Found", message: "No files to store" })
+	if(!fs.existsSync(path.join(process.env.STORAGE_PATH))) return res.status(404).send({ statusCode: 404, error: "Not Found", message: "No files are stored yet" })
 
 	const files = walk(process.env.STORAGE_PATH)
-	if(!files.length) return res.status(404).send({ statusCode: 404, error: "Not Found", message: "No files to store" })
+	if(!files.length) return res.status(404).send({ statusCode: 404, error: "Not Found", message: "No files are stored yet" })
 
 	const fileList = files.map(file => ({
 		name: file,

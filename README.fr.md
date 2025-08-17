@@ -76,6 +76,8 @@ docker-compose up -d --build
 # Pour voir les logs : docker-compose logs -f
 ```
 
+> Pour éviter de perdre des données, vous pouvez monter un volume allant du répertoire `STORAGE_PATH` (valeur du fichier `.env`) vers un répertoire physique sur votre machine hôte.
+
 ## Configurer l'extension
 
 Les instructions sont disponibles sur le [dépôt GitHub de l'extension](https://github.com/johan-perso/obsidianinbox-plugin).

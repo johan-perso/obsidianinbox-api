@@ -77,6 +77,8 @@ docker-compose up -d --build
 # To view logs: docker-compose logs -f
 ```
 
+> To avoid losing data, you can mount a volume going from the `STORAGE_PATH` directory (value from the `.env` file) to a physical directory on your host machine.
+
 ## Configure the Obsidian plugin
 
 These instructions can be found in the [GitHub repository of the plugin](https://github.com/johan-perso/obsidianinbox-plugin).

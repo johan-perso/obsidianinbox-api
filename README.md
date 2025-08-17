@@ -2,7 +2,9 @@
 
 # Obsidian Inbox | API
 
-An Obsidian extension allowing you to receive files in your vault via a REST API, like an inbox.
+An Obsidian plugin allowing you to receive files in your vault via a REST API, like an inbox.
+
+> This GitHub repo contains the source code required to run the backend. The plugin for Obsidian is available [here](https://github.com/johan-perso/obsidianinbox-plugin).
 
 
 ## Hosting
@@ -75,9 +77,9 @@ docker-compose up -d --build
 # To view logs: docker-compose logs -f
 ```
 
-## Configure the Obsidian extension
+## Configure the Obsidian plugin
 
-These instructions can be found in the [GitHub repository of the extension](https://github.com/johan-perso/obsidianinbox-extension).
+These instructions can be found in the [GitHub repository of the plugin](https://github.com/johan-perso/obsidianinbox-plugin).
 
 ## Using the API
 

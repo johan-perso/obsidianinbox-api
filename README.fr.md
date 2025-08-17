@@ -4,6 +4,7 @@
 
 Une extension pour Obsidian vous permettant de recevoir des fichiers dans votre coffre via une API REST, comme une boîte de réception.
 
+> Ce dépôt GitHub contient le code source nécessaire pour exécuter l'API. Le dépôt de l'extension est [disponible ici](https://github.com/johan-perso/obsidianinbox-plugin).
 
 ## Installation
 
@@ -77,7 +78,7 @@ docker-compose up -d --build
 
 ## Configurer l'extension
 
-Les instructions sont disponibles sur le [dépôt GitHub de l'extension](https://github.com/johan-perso/obsidianinbox-extension).
+Les instructions sont disponibles sur le [dépôt GitHub de l'extension](https://github.com/johan-perso/obsidianinbox-plugin).
 
 ## Utilisation de l'API
 

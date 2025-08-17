@@ -10,6 +10,7 @@
 	"author": "JohanStickman",
 	"license": "MIT",
 	"dependencies": {
+		"@fastify/cors": "^11.1.0",
 		"dotenv": "10.0.0",
 		"fastify": "^5.3.3"
 	},

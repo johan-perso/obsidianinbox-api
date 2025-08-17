@@ -1,4 +1,5 @@
 const fastify = require("fastify")({ logger: true })
+fastify.register(require("@fastify/cors"))
 require("dotenv").config()
 
 const fs = require("fs")

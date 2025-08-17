@@ -1,5 +1,8 @@
 const fastify = require("fastify")({ logger: true })
-fastify.register(require("@fastify/cors"))
+fastify.register(require("@fastify/cors"), {
+	origin: "*",
+	methods: ["GET", "POST", "DELETE"],
+})
 require("dotenv").config()
 
 const fs = require("fs")
@@ -65,7 +68,7 @@ main()
 
 fastify.addHook("onRequest", (req, res, done) => { // check auth
 	if(!req.headers.authorization) return res.status(401).send({ statusCode: 401, error: "Unauthorized", message: "authorization header isn't provided" })
-	if(req.headers.authorization != process.env.AUTH_PASSWORD) return res.status(401).send({ statusCode: 401, erroa: "Unauthorized", message: "Authorization header isn't valid, check the .env file if you're the admin of this instance" })
+	if(req.headers.authorization != process.env.AUTH_PASSWORD) return res.status(401).send({ statusCode: 401, error: "Unauthorized", message: "Authorization header isn't valid, check the .env file if you're the admin of this instance" })
 
 	done()
 })
